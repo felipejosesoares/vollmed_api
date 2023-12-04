@@ -25,6 +25,8 @@ public class Paciente {
 
     private Endereco endereco;
 
+    private boolean ativo;
+
     public Paciente(DadosCadastroPaciente dados) {
         this.nome = dados.nome();
         this.email = dados.email();
@@ -43,5 +45,9 @@ public class Paciente {
         if (dados.endereco() != null) {
             this.endereco.atualizarEndereco(dados.endereco());
         }
+    }
+
+    public void excluir() {
+        this.ativo = false;
     }
 }
